@@ -87,7 +87,7 @@ class DEFIS_Admin {
 			$parts = array();
 
 			if ( $width || $height ) {
-				$parts[] = $width . ' &times; ' . $height;
+				$parts[] = absint( $width ) . ' &times; ' . absint( $height );
 			}
 
 			if ( $crop ) {
@@ -104,7 +104,7 @@ class DEFIS_Admin {
 		?>
 		<select name="image_default_size" id="defis-image-default-size">
 			<?php foreach ( $sizes as $size => $label ) : ?>
-				<option value="<?php echo esc_attr( $size ); ?>" <?php selected( $size, $current_size ); ?>><?php echo $label; ?></option>
+				<option value="<?php echo esc_attr( $size ); ?>" <?php selected( $size, $current_size ); ?>><?php echo esc_html_e( $label, 'defis' ); ?></option>
 			<?php endforeach; ?>
 		</select>
 		<?php
@@ -128,7 +128,7 @@ class DEFIS_Admin {
 		?>
 		<select name="image_default_link_type" id="defis-image-default-link-type">
 			<?php foreach ( $options as $option => $label ) : ?>
-				<option value="<?php echo esc_attr( $option ); ?>" <?php selected( $option, $current_type ); ?>><?php echo $label; ?></option>
+				<option value="<?php echo esc_attr( $option ); ?>" <?php selected( $option, $current_type ); ?>><?php echo esc_html_e( $label, 'defis' ); ?></option>
 			<?php endforeach; ?>
 		</select>
 		<?php
@@ -152,7 +152,7 @@ class DEFIS_Admin {
 		?>
 		<select name="image_default_align" id="defis-image-default-align">
 			<?php foreach ( $options as $option => $label ) : ?>
-				<option value="<?php echo esc_attr( $option ); ?>" <?php selected( $option, $current_align ); ?>><?php echo $label; ?></option>
+				<option value="<?php echo esc_attr( $option ); ?>" <?php selected( $option, $current_align ); ?>><?php echo esc_html_e( $label, 'defis' ); ?></option>
 			<?php endforeach; ?>
 		</select>
 		<?php
